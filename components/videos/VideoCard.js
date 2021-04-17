@@ -7,7 +7,7 @@ const VideoCard = (props) => {
 	const flipDirection = props.index % 2 ? { left: true } : { right: true };
 
 	return (
-		<Bounce {...flipDirection} when={loadingContext.state.loadingContext}>
+		<Bounce {...flipDirection} when={loadingContext.state.showVideos}>
 			<div className="relative border-gray-800 max-w-md bg-black hover:border-pink-500 cursor-pointer border-4">
 				<a href={`https://www.youtube.com/watch?v=${props.id}`} target="blank">
 					<div className="py-2 pl-4 text-white text-2xl">{props.title}</div>

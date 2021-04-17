@@ -32,6 +32,10 @@ const Videos = () => {
 		);
 
 		loadingContext.dispatch({ type: 'switch' });
+
+		const showVideosTimer = window.setTimeout(() => loadingContext.dispatch({ type: 'switchVideos' }), 2000);
+
+		return () => window.clearTimeout(showVideosTimer);
 	}, []);
 
 	return (

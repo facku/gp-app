@@ -4,6 +4,8 @@ const reducer = (state, action) => {
 	switch (action.type) {
 		case 'switch':
 			return { ...state, loading: !state.loading };
+		case 'switchVideos':
+			return { ...state, showVideos: !state.showVideos };
 		default:
 			return state;
 	}
@@ -11,7 +13,7 @@ const reducer = (state, action) => {
 
 export const LoadingContext = createContext(null);
 
-export const initialState = { loading: true };
+export const initialState = { loading: true, showVideos: false };
 
 export const LoadingContextProvider = ({ children }) => {
 	const [ state, dispatch ] = useReducer(reducer, initialState);
